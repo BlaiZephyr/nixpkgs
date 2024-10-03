@@ -34865,6 +34865,10 @@ with pkgs;
   };
   ddnet-server = ddnet.override { buildClient = false; };
 
+  tclient = callPackage ../games/tclient {
+    inherit (darwin.apple_sdk.frameworks) Carbon Cocoa OpenGL Security;
+  };
+  
   ddns-go = callPackage ../tools/networking/ddns-go { };
 
   devilutionx = callPackage ../games/devilutionx {
